@@ -16,9 +16,9 @@ const links = [
 
 const Navigation = (props) => {
 
-    useEffect(() => {
+    /*useEffect(() => {
         console.log(links);
-    }, []);
+    }, []);*/
 
     const nav = useRef(null);
     const navigate = useNavigate();
@@ -60,7 +60,6 @@ const Navigation = (props) => {
             <label class="theme-switch">
             <input type="checkbox" defaultChecked={isDarkTheme} onClick={() => {
                 setIsDarkTheme(!isDarkTheme);
-                console.log("ok");
                 document.getElementById("App").style.cssText = isDarkTheme ? "background-color : #dddddd; color: #6d9b00;" : "background-color : #343741; color: #b6f12c;";
                 nav.current.style.backgroundColor = isDarkTheme ? "white" : "#24262b";
             }} />

@@ -1,37 +1,61 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home";
-import Exo1 from "./pages/Exo1";
-import Exo2 from "./pages/Exo2";
-import Exo3 from "./pages/Exo3";
-import Exo4 from "./pages/Exo4";
-import Exo5 from "./pages/Exo5";
-import Exo6 from "./pages/Exo6";
-import Exo7 from "./pages/Exo7";
+import Exo from "./pages/Exo";
 import NotFound from "./pages/NotFound";
 import "./styles/App.css"
 
 function App() {
 
-  const links = [
+  const exercises = [
+    {
+      id: "1", name: "Exercice 1", img: "./home.png"
+    },
+    {
+      id: "2", name:"Exercice 2", img: "./home.png"
+    },
+    {
+      id: "3", name:"Exercice 3", img: "./home.png"
+    },
+    {
+      id: "4", name:"Exercice 4", img:"./home.png"
+    },
+    {
+      id: "5", name:"Exercice 5", img:"./home.png"
+    },
+    {
+      id: "6", name:"Exercice 6", img:"vhome.png"
+    }
+  ]
+
+  /*const links = [
     {to: '/', element: <Home />},
-    {to: '/exo1', element: <Exo1 />},
-    {to: '/exo2', element: <Exo2 />},
-    {to: '/exo3', element: <Exo3 />},
-    {to: '/exo4', element: <Exo4 />},
-    {to: '/exo5', element: <Exo5 />},
-    {to: '/exo6', element: <Exo6 />},
-    {to: '/exo7', element: <Exo7 />},
+    {to: '/exo1', element: <Exo id={exercises} />},
+    {to: '/exo2', element: <Exo />},
+    {to: '/exo3', element: <Exo />},
+    {to: '/exo4', element: <Exo />},
+    {to: '/exo5', element: <Exo />},
+    {to: '/exo6', element: <Exo />},
+    {to: '/exo7', element: <Exo />},
     {to: '*', element: <NotFound />},
   ]
+
+  useEffect(() => {
+    getData()
+  }, [])
+  const getData = () => {
+    axios.get('http://localhost:3003/exercises').then((res) => setExercisesData(res.data));
+  }*/
   
   return (
     <div id="App">
       <BrowserRouter>
         <Routes>
-        {links.map(link => (
-          <Route path={link.to} element={link.element} key={link.to} />
+        <Route path="/" element={<Home />} />
+        {exercises.map(ex => (
+          <Route path={'/exo'+ex.id} element={<Exo props={ex} />} key={ex.id} />
         ))}
+        <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

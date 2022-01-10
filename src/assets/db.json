@@ -1,0 +1,39 @@
+{
+    "exercises" : [
+        {
+            "id": "1",
+            "name": "Exercice 1",
+            "description": "L'exercice 1"
+        },
+        {
+            "id": "2",
+            "name": "Exercice 2",
+            "description": "L'exercice 2"
+        },
+        {
+            "id": "3",
+            "name": "Exercice 3",
+            "description": "L'exercice 3"
+        },
+        {
+            "id": "4",
+            "name": "Exercice 4",
+            "description": "L'exercice 4"
+        },
+        {
+            "id": "5",
+            "name": "Exercice 5",
+            "description": "L'exercice 5"
+        },
+        {
+            "id": "6",
+            "name": "Exercice 6",
+            "description": "L'exercice 6"
+        },
+        {
+            "id": "7",
+            "name": "Exercice 7",
+            "description": "L'exercice 7"
+        }
+    ]
+}
