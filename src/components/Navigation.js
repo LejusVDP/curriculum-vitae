@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const links = [
@@ -11,21 +11,25 @@ const links = [
     {to: '/exo7', name: 'Exo7'},
 ]
 
-const Navigation = () => {
+const Navigation = (props) => {
 
+    const nav = useRef(null);
     const [theme, setTheme] = useState(true);
 
     return (
-        <nav id='Navigation'>
+        <nav id='Navigation' ref={nav}>
             <div className="nav-home">
                 <NavLink to="/" >
                     <img class="fit-picture" src="./home.png" alt="Home" />
                 </NavLink>
             </div>
-            <select name="Exercice" id="exercise-picker">
-                <option>-</option>
+            <select name="Exercice" id="exercise-picker" /*onChange={(e) => {
+                const selectedOption = e.target.value;
+                window.location = "http://localhost:3000/" + selectedOption;
+            }}*/>
+                <NavLink to="/">OUI BONSOIR</NavLink>
                 {links.map(link => (
-                    <option key={link.name}>{link.name}</option>
+                    <option value={<NavLink to={link.to}></NavLink>} key={link.name}>{link.name}</option>
                 ))}
             </select>
             <ul>
@@ -39,19 +43,10 @@ const Navigation = () => {
             </ul>
             <label class="theme-switch">
             <input type="checkbox" defaultChecked={theme} onClick={() => {
-                const App = document.getElementById("App");
-                const Nav = document.getElementById("Navigation");
                 setTheme(!theme);
                 console.log("ok");
-                    theme ? (
-                        App.style.backgroundColor = "#dddddd",
-                        Nav.style.backgroundColor = "white",
-                        console.log("JOUR")
-                    ) : (
-                        App.style.backgroundColor = "#343741",
-                        Nav.style.backgroundColor = "#24262b",
-                        console.log("NUIT")
-                    );
+                document.getElementById("App").style.backgroundColor = theme ? "#dddddd" : "#343741";
+                nav.current.style.backgroundColor = theme ? "white" : "#24262b";
             }} />
             <span class="slider round"></span>
             </label>

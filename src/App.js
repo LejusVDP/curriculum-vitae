@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home";
 import Exo1 from "./pages/Exo1";
@@ -11,25 +11,28 @@ import Exo7 from "./pages/Exo7";
 import NotFound from "./pages/NotFound";
 import "./styles/App.css"
 
-const links = [
-  {to: '/', element: <Home />},
-  {to: '/exo1', element: <Exo1 />},
-  {to: '/exo2', element: <Exo2 />},
-  {to: '/exo3', element: <Exo3 />},
-  {to: '/exo4', element: <Exo4 />},
-  {to: '/exo5', element: <Exo5 />},
-  {to: '/exo6', element: <Exo6 />},
-  {to: '/exo7', element: <Exo7 />},
-  {to: '*', element: <NotFound />},
-]
-
 function App() {
+
+  const app = useRef(null);
+
+  const links = [
+    {to: '/', element: <Home />},
+    {to: '/exo1', element: <Exo1 />},
+    {to: '/exo2', element: <Exo2 />},
+    {to: '/exo3', element: <Exo3 />},
+    {to: '/exo4', element: <Exo4 />},
+    {to: '/exo5', element: <Exo5 />},
+    {to: '/exo6', element: <Exo6 />},
+    {to: '/exo7', element: <Exo7 />},
+    {to: '*', element: <NotFound />},
+  ]
+  
   return (
-    <div id="App">
+    <div id="App" ref={app}>
       <BrowserRouter>
         <Routes>
         {links.map(link => (
-          <Route path={link.to} exact element={link.element} key={link.to}/>
+          <Route path={link.to} exact element={link.element} key={link.to} />
         ))}
         </Routes>
       </BrowserRouter>

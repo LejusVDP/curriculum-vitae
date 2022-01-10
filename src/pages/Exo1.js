@@ -1,10 +1,13 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 
-const Exo1 = () => {
+const Exo1 = (props) => {
+
+    const app = props
+
     return (
         <div>
-            <Navigation/>
+            <Navigation app={app}/>
             <h1>Exo1</h1>
         </div>
     );
