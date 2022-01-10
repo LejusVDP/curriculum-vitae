@@ -161,3 +161,16 @@ html {
   .slider.round:before {
     border-radius: 50%;
   }
+
+.exercise-picker {
+  width: 40%;
+  padding-left: 10px;
+  color: var(--slider-color);
+  text-align: center;
+}
+/*.css-1hb7zxy-IndicatorsContainer {
+  width: 60%;
+}*/
+.css-6j8wv5-Input {
+  grid-template-columns: 0 max-content;
+}

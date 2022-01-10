@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home";
 import Exo1 from "./pages/Exo1";
@@ -13,8 +13,6 @@ import "./styles/App.css"
 
 function App() {
 
-  const app = useRef(null);
-
   const links = [
     {to: '/', element: <Home />},
     {to: '/exo1', element: <Exo1 />},
@@ -28,11 +26,11 @@ function App() {
   ]
   
   return (
-    <div id="App" ref={app}>
+    <div id="App">
       <BrowserRouter>
         <Routes>
         {links.map(link => (
-          <Route path={link.to} exact element={link.element} key={link.to} />
+          <Route path={link.to} element={link.element} key={link.to} />
         ))}
         </Routes>
       </BrowserRouter>

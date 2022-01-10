@@ -1,18 +1,24 @@
-import React, { useState, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Select } from 'react-select';
+import React, { useState, useRef, useEffect } from 'react';
+import { NavLink, Redirect } from 'react-router-dom';
+import Select from 'react-select';
 
 const links = [
-    {to: '/exo1', name: 'Exo1'},
-    {to: '/exo2', name: 'Exo2'},
-    {to: '/exo3', name: 'Exo3'},
-    {to: '/exo4', name: 'Exo4'},
-    {to: '/exo5', name: 'Exo5'},
-    {to: '/exo6', name: 'Exo6'},
-    {to: '/exo7', name: 'Exo7'},
+    {value: '/exo1', label: 'Exo1'},
+    {value: '/exo2', label: 'Exo2'},
+    {value: '/exo3', label: 'Exo3'},
+    {value: '/exo4', label: 'Exo4'},
+    {value: '/exo5', label: 'Exo5'},
+    {value: '/exo6', label: 'Exo6'},
+    {value: '/exo7', label: 'Exo7'},
 ]
 
+
+
 const Navigation = (props) => {
+
+    useEffect(() => {
+        console.log(links);
+    }, []);
 
     const nav = useRef(null);
     const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -27,21 +33,22 @@ const Navigation = (props) => {
             </div>
             <Select
           className="exercise-picker"
-          defaultValue={links.name[0]}
+          defaultValue={links.label}
           isDisabled={false}
           isLoading={false}
           isClearable={false}
           isRtl={false}
           isSearchable={isSearchable}
           name="exercise"
-          options={links.name}
+          options={links}
+          onChange={(e) => setIsDarkTheme(e.target.value)}
         />
             <ul>
                 {links.map(link => (
                     <NavLink
-                        to={link.to} key={link.name}
+                        to={link.value} key={link.label}
                     >
-                    {link.name}
+                    {link.label}
                     </NavLink>
                 ))}
             </ul>
@@ -56,6 +63,7 @@ const Navigation = (props) => {
             </label>
         </nav>
     );
+    
 };
 
 export default Navigation;
