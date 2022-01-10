@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 const links = [
@@ -21,8 +21,13 @@ const Navigation = (props) => {
     }, []);
 
     const nav = useRef(null);
+    const navigate = useNavigate();
     const [isDarkTheme, setIsDarkTheme] = useState(true);
     const isSearchable = true;
+
+    async function exerciseNavigate(link) {
+        navigate(link);
+    }
 
     return (
         <nav id='Navigation' ref={nav}>
@@ -41,7 +46,7 @@ const Navigation = (props) => {
           isSearchable={isSearchable}
           name="exercise"
           options={links}
-          onChange={(e) => setIsDarkTheme(e.target.value)}
+          onChange={(e) => exerciseNavigate(e.value)}
         />
             <ul>
                 {links.map(link => (
@@ -56,7 +61,7 @@ const Navigation = (props) => {
             <input type="checkbox" defaultChecked={isDarkTheme} onClick={() => {
                 setIsDarkTheme(!isDarkTheme);
                 console.log("ok");
-                document.getElementById("App").style.backgroundColor = isDarkTheme ? "#dddddd" : "#343741";
+                document.getElementById("App").style.cssText = isDarkTheme ? "background-color : #dddddd; color: #6d9b00;" : "background-color : #343741; color: #b6f12c;";
                 nav.current.style.backgroundColor = isDarkTheme ? "white" : "#24262b";
             }} />
             <span class="slider round"></span>

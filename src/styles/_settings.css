@@ -4,9 +4,9 @@ html {
   --light-theme-bg-color: #dddddd;
   --main-txt-color: #b6f12c;
   
-  --slider-dim: 13px;
+  --slider-dim: 12px;
   --slider-color: #1a1818;
-  --slider-translate: translateX(13px);
+  --slider-translate: translateX(75%);
 
   background-color: var(--main-bg-color); 
   color: var(--main-txt-color);
@@ -34,7 +34,7 @@ html {
     justify-content: space-evenly;
   }
   nav {
-    padding: 2% 1%;
+    padding: 1% 2%;
     background-color: var(--nav-bg-color);
     display: flex;
     align-items: center;
@@ -129,9 +129,9 @@ html {
     width: 18px; 
     height: 18px;
     content:"";
-    bottom: -10px;
+    bottom: -5px;
     left: 130%;
-    transform: translateX(-130%) translateY(-10%);
+    transform: translateX(-130%) translateY(-5%);
   }
   
   input:checked + .slider:before {
@@ -148,9 +148,9 @@ html {
     width: 18px; 
     height: 18px;
     content:"";
-    bottom: -10px;
+    bottom: -3%;
     left: 130%;
-    transform: translateX(-130%) translateY(-10%);
+    transform: translateX(-130%) translateY(-3%);
   }
   
   /* Rounded sliders */
@@ -163,7 +163,8 @@ html {
   }
 
 .exercise-picker {
-  width: 40%;
+  width: 25%;
+  min-width: 100px;
   padding-left: 10px;
   color: var(--slider-color);
   text-align: center;
