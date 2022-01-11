@@ -47,6 +47,14 @@ nav a:link {
 nav a:visited {
     color: #41b912;
 }
+
+nav a:hover {
+    color: white;
+  }
+nav a:active {
+    color : #b8b8b8;
+  }
+  
 nav .active {
     color: #48ff00;
     font-weight: bold;
