@@ -14,8 +14,9 @@ html {
   width: 100%;
 }
 
-body {
-  height: 100%;
+.light-theme-body {
+  background-color : #dddddd;
+  color: #6d9b00;
 }
 #root {
   height: 100%;

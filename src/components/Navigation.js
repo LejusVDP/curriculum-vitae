@@ -3,9 +3,9 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 const links = [
-    {value: '/exo1', label: 'Exo1'},
-    {value: '/exo2', label: 'Exo2'},
-    {value: '/exo3', label: 'Exo3'},
+    {value: '/a-propos', label: 'A Propos'},
+    {value: '/etudes', label: 'Études'},
+    {value: '/competences', label:'Compétences'},
     {value: '/exo4', label: 'Exo4'},
     {value: '/exo5', label: 'Exo5'},
     {value: '/exo6', label: 'Exo6'},
@@ -31,14 +31,17 @@ const Navigation = (props) => {
 
     return (
         <nav id='Navigation' ref={nav}>
-            <div className="nav-home">
+        <div className="nav-home">
                 <NavLink to="/" >
-                    <img class="fit-picture" src="./home.png" alt="Home" />
+                    <img src="./home.png" alt="Home" />
                 </NavLink>
+            </div>
+            <div className="left-links">
+                <NavLink to="/cv-file" >CV Classique</NavLink>
             </div>
             <Select
           className="exercise-select"
-          defaultValue={links.label}
+          defaultValue={links[1].label}
           isDisabled={false}
           isLoading={false}
           isClearable={false}
@@ -48,22 +51,17 @@ const Navigation = (props) => {
           options={links}
           onChange={(e) => exerciseNavigate(e.value)}
         />
-            <ul className='exercises-links'>
-                {links.map(link => (
-                    <NavLink
-                        to={link.value} key={link.label}
-                    >
-                    {link.label}
-                    </NavLink>
-                ))}
+            <ul className='right-links'>
+                <NavLink to="/contact" >Contact</NavLink>
+                <NavLink to="/jspquoi" >Jspquoi</NavLink>
             </ul>
             <label className="theme-switch">
             <input className="theme-input" type="checkbox" defaultChecked={isDarkTheme} onClick={() => {
                 setIsDarkTheme(!isDarkTheme);
-                document.getElementById("App").style.cssText = isDarkTheme ? "background-color : #dddddd; color: #6d9b00;" : "background-color : #343741; color: #b6f12c;";
+                document.body.classList.toggle("light-theme-body");
                 nav.current.style.backgroundColor = isDarkTheme ? "white" : "#24262b";
             }} />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
             </label>
         </nav>
     );

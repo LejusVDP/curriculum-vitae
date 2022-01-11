@@ -1,19 +1,47 @@
+#Navigation {
+    padding: 1% 2%;
+    background-color: var(--nav-bg-color);
+    display: grid;
+    grid-template-columns: 6% 28% 20% 40% 6%;
+    align-items: center;
+    color: white;
+}
+/*-----------------*/
 
 .nav-home img {
     width: 20px;
 }
 .nav-home {
-    width: fit-content;
-    padding: 0 10px;
+    justify-self: center;
+}
+
+.left-links {
+    justify-self: center;
+}
+.left-links a:before{
+    background-image: url('../../assets/img/logo-pdf.png');
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    content:"";
+    bottom: -5px;
+    left: 0%;
+    margin-right: 5px;
+    transform: translateX(0%) translateY(10%);
+}
+.right-links {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
 }
 
 .exercise-select {
-    width: 25%;
-    min-width: 100px;
+    min-width: 150px;
     max-width: 250px;
-    padding-left: 3%;
     color: var(--slider-color);
-    text-align: center;
+    text-align: left;
 }
 .css-6j8wv5-.theme-input {
     grid-template-columns: 0 max-content;
@@ -27,15 +55,6 @@
     width: 100%;
     justify-content: space-evenly;
 }
-#Navigation {
-    padding: 1% 2%;
-    background-color: var(--nav-bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-}
-
 nav a:link {
     padding: 0;
     margin: 0;
@@ -75,6 +94,7 @@ nav .active::after {
     width: 26px;
     height: 16px;
     max-width: 26px;
+    margin-left: 25px;
 }
 
 .theme-switch .theme-input { 
@@ -116,7 +136,7 @@ nav .active::after {
 }
 
 .theme-input:checked + .slider:after {
-    background-image: url('../../img/to_light_mode.png');
+    background-image: url('../../assets/img/to_light_mode.png');
     background-size: 18px 18px;
     display: inline-block;
     width: 18px; 
@@ -135,7 +155,7 @@ nav .active::after {
 }
 
 .slider:after {
-    background-image: url('../../img/to_dark_mode.png');
+    background-image: url('../../assets/img/to_dark_mode.png');
     background-size: 18px 18px;
     display: inline-block;
     width: 18px; 
