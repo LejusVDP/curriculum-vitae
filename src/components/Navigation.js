@@ -37,7 +37,7 @@ const Navigation = (props) => {
                 </NavLink>
             </div>
             <div className="left-links">
-                <NavLink to="/cv-file" >CV Classique</NavLink>
+                <a href="https://raw.githubusercontent.com/LejusVDP/curriculum-vitae/main/public/CV.pdf" target="_blank" >CV Classique</a>
             </div>
             <Select
           className="exercise-select"
