@@ -1,3 +1,4 @@
 @import "./_settings";
 @import "./pages/_home";
-@import "./components/_navigation"
+@import "./pages/_exo";
+@import "./components/_navigation";

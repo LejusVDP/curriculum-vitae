@@ -1,0 +1,18 @@
+.exo-page {
+    max-height: 80%;
+}
+.error404 {
+    display: flex;
+    max-height: 85vh;
+}
+.error404 h1 {
+    height: 50%;
+    width: 1000px;
+}
+.error404 img {
+    max-height: 100vh;
+}
+
+.exercise-found {
+    max-height: 50%;
+}

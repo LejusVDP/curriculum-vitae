@@ -1,15 +1,3 @@
-.exercise-picker {
-    width: 25%;
-    min-width: 100px;
-    max-width: 250px;
-    padding-left: 3%;
-    color: var(--slider-color);
-    text-align: center;
-}
-.css-6j8wv5-Input {
-    grid-template-columns: 0 max-content;
-}
-
 
 .nav-home img {
     width: 20px;
@@ -18,7 +6,20 @@
     width: fit-content;
     padding: 0 10px;
 }
-nav ul {
+
+.exercise-select {
+    width: 25%;
+    min-width: 100px;
+    max-width: 250px;
+    padding-left: 3%;
+    color: var(--slider-color);
+    text-align: center;
+}
+.css-6j8wv5-.theme-input {
+    grid-template-columns: 0 max-content;
+}
+
+.exercises-links {
     list-style-type: none;
     padding: 0 10px;
     margin: 0;
@@ -26,7 +27,7 @@ nav ul {
     width: 100%;
     justify-content: space-evenly;
 }
-nav {
+#Navigation {
     padding: 1% 2%;
     background-color: var(--nav-bg-color);
     display: flex;
@@ -35,9 +36,6 @@ nav {
     color: white;
 }
 
-nav li:hover {
-    color: white;
-}
 nav a:link {
     padding: 0;
     margin: 0;
@@ -49,13 +47,6 @@ nav a:link {
 nav a:visited {
     color: #41b912;
 }
-a:hover {
-    color: white;
-}
-a:active {
-    color : #b8b8b8;
-}
-
 nav .active {
     color: #48ff00;
     font-weight: bold;
@@ -73,11 +64,12 @@ nav .active::after {
 .theme-switch {
     position: relative;
     display: inline-block;
-    width: 36px;
+    width: 26px;
     height: 16px;
+    max-width: 26px;
 }
 
-.theme-switch input { 
+.theme-switch .theme-input { 
     opacity: 0;
     width: 0;
     height: 0;
@@ -107,15 +99,15 @@ nav .active::after {
     transition: .4s;
 }
 
-input:checked + .slider {
+.theme-input:checked + .slider {
     background-color: var(--main-bg-color);
 }
 
-input:focus + .slider {
+.theme-input:focus + .slider {
     box-shadow: 0 0 1px var(--main-bg-color);
 }
 
-input:checked + .slider:after {
+.theme-input:checked + .slider:after {
     background-image: url('../../img/to_light_mode.png');
     background-size: 18px 18px;
     display: inline-block;
@@ -127,7 +119,7 @@ input:checked + .slider:after {
     transform: translateX(-130%) translateY(-5%);
 }
 
-input:checked + .slider:before {
+.theme-input:checked + .slider:before {
     -webkit-transform: var(--slider-translate);
     -ms-transform: var(--slider-translate);
     transform: var(--slider-translate);
@@ -154,3 +146,13 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/*Mobile Version*/
+@media screen and (max-width: 600px) {
+    html {
+      background-color: var(--light-theme-bg-color);
+    }
+    .exercises-links {
+        display: none;
+    }
+  }

@@ -1,8 +1,17 @@
-.home {
+#home {
     margin: 5px;
     text-align: justify;
+    max-height: 100vh;
 }
-
-.home h1 {
-    text-align: center;
+#home p {
+    padding: 3% 0 0 3%;
+    width: 33%;
+}
+.main {
+    background: #343741;
+    color: #b6f12c;
+}
+.light-theme .main {
+    background : #dddddd;
+    color: #6d9b00;
 }

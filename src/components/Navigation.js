@@ -37,7 +37,7 @@ const Navigation = (props) => {
                 </NavLink>
             </div>
             <Select
-          className="exercise-picker"
+          className="exercise-select"
           defaultValue={links.label}
           isDisabled={false}
           isLoading={false}
@@ -48,7 +48,7 @@ const Navigation = (props) => {
           options={links}
           onChange={(e) => exerciseNavigate(e.value)}
         />
-            <ul>
+            <ul className='exercises-links'>
                 {links.map(link => (
                     <NavLink
                         to={link.value} key={link.label}
@@ -57,8 +57,8 @@ const Navigation = (props) => {
                     </NavLink>
                 ))}
             </ul>
-            <label class="theme-switch">
-            <input type="checkbox" defaultChecked={isDarkTheme} onClick={() => {
+            <label className="theme-switch">
+            <input className="theme-input" type="checkbox" defaultChecked={isDarkTheme} onClick={() => {
                 setIsDarkTheme(!isDarkTheme);
                 document.getElementById("App").style.cssText = isDarkTheme ? "background-color : #dddddd; color: #6d9b00;" : "background-color : #343741; color: #b6f12c;";
                 nav.current.style.backgroundColor = isDarkTheme ? "white" : "#24262b";
