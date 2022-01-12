@@ -1,0 +1,16 @@
+.moi-main {
+    text-align: justify;
+    margin : 50px 25%;
+}
+.moi-main p {
+    display: flex;
+}
+.moi-img img {
+    height: 200px;
+    border-radius: 30%;
+    border-style: solid;
+}
+.moi-img {
+    display: flex;
+    justify-content: center;
+}

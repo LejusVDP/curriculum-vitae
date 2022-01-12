@@ -1,0 +1,36 @@
+.exo-page {
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.error404 {
+    display: flex;
+    max-height: 85vh;
+}
+.error404 h1 {
+    height: 50%;
+    width: 1000px;
+}
+.error404 img {
+    max-height: 100vh;
+}
+
+.exercise-found {
+    max-height: 50%;
+}
+
+.exercise-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.exercise-found .all-img {
+    display: grid;
+}
+
+.exercise-found .main-img {
+    max-width: 400px;
+}
+.exercise-found .other-img {
+    max-width: 400px;
+}

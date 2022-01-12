@@ -2,21 +2,25 @@ html {
   --nav-bg-color: #24262b;
   --main-bg-color: #343741;
   --light-theme-bg-color: #dddddd;
-  --main-txt-color: #b6f12c;
+  --main-txt-color: #8cc900;
   
   --slider-dim: 12px;
   --slider-color: #1a1818;
   --slider-translate: translateX(75%);
 
-  background-color: var(--main-bg-color); 
+  background: var(--main-bg-color); 
   color: var(--main-txt-color);
   height: 100%;
   width: 100%;
 }
 
+body {
+  height: 100%;
+}
+
 .light-theme-body {
-  background-color : #dddddd;
-  color: #6d9b00;
+  background : var(--light-theme-bg-color);
+  color: var(--main-txt-color);
 }
 #root {
   height: 100%;
@@ -29,7 +33,13 @@ html {
 h1 {
   text-align: center;
 }
-
+a {
+  text-decoration: none;
+  color: #b6f12c;
+}
+a:visited {
+    color: #b6f12c;
+}
 a:hover {
   color: white;
 }

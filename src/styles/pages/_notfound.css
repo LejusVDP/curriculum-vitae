@@ -1,0 +1,11 @@
+.not-found .img {
+    display: flex;
+    justify-content: center;
+}
+.not-found h2 {
+    text-align: center;
+}
+
+.not-found img {
+    max-width: 500px;
+}

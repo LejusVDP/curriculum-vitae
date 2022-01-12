@@ -1,0 +1,42 @@
+.contact-main {
+    display: grid;
+    grid-template-columns: 5fr 10fr 15fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    line-height: 2.5rem;
+}
+#tel-icon {
+    grid-column: 1;
+    grid-row: 1;
+}
+#tel {
+    grid-column: 2;
+    grid-row: 1;
+}
+#email-icon {
+    grid-column: 1;
+    grid-row: 2;
+}
+#email {
+    grid-column: 2;
+    grid-row: 2;
+}
+#workplace-icon {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 10px;
+    border: white double 3px;
+    border-radius: 50px;
+}
+#workplace {
+    grid-column: 2;
+    grid-row: 3;
+}
+.contact-icons {
+    height: 50px;
+    width: 50px;
+    align-self: center;
+    justify-self: center;
+}
+.contact-infos {
+    align-self: center;
+}

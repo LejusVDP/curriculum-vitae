@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Moi from "./pages/Moi";
 import Competences from "./pages/Competences";
 import Etudes from "./pages/Etudes";
+import Contact from "./pages/Contact";
 
 function App() {
 
@@ -22,11 +23,17 @@ function App() {
     {
       url: "etudes",
       element: <Etudes />
+    },
+    {
+      url: "contact",
+      element: <Contact />
     }
   ]
 
   return (
     <div id="App">
+      <div className="bg-image"></div>
+      <div className="content">
       <BrowserRouter>
         <Navigation />
         <Routes>
@@ -37,6 +44,7 @@ function App() {
         <Route path="*" element={<NotFound /> } />
         </Routes>
       </BrowserRouter>
+      </div>
     </div>
   );
 }

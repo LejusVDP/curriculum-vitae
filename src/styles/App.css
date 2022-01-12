@@ -1,3 +1,7 @@
 @import "./_settings";
 @import "./pages/_home";
+@import "./pages/_moi";
+@import "./pages/_contact";
+@import "./pages/_etudes";
+@import "./pages/_notfound";
 @import "./components/_navigation";

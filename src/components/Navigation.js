@@ -6,10 +6,6 @@ const links = [
     {value: '/a-propos', label: 'A Propos'},
     {value: '/etudes', label: 'Études'},
     {value: '/competences', label:'Compétences'},
-    {value: '/exo4', label: 'Exo4'},
-    {value: '/exo5', label: 'Exo5'},
-    {value: '/exo6', label: 'Exo6'},
-    {value: '/exo7', label: 'Exo7'},
 ]
 
 
@@ -37,7 +33,7 @@ const Navigation = (props) => {
                 </NavLink>
             </div>
             <div className="left-links">
-                <a href="https://raw.githubusercontent.com/LejusVDP/curriculum-vitae/main/public/CV.pdf" target="_blank" >CV Classique</a>
+                <a href="https://raw.githubusercontent.com/LejusVDP/curriculum-vitae/main/public/CV.pdf" target="_blank" rel="noreferrer" >CV Classique</a>
             </div>
             <Select
           className="exercise-select"

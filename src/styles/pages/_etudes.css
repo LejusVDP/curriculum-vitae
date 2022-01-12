@@ -1,0 +1,26 @@
+#etudes {
+    text-align: center;
+}
+.etudes-main h3 {
+    color: white;
+}
+.light-theme-body .etudes-main h3 {
+    color: #2a5e00;
+}
+.light-theme-body .etudes-main h2 {
+    color: #204700;
+}
+.etudes-dates {
+    color: #cfcfcf;
+    font-style: italic;
+}
+.light-theme-body .etudes-dates {
+    color: #585858;
+}
+.etudes-main span {
+    width: 900px;
+    height: 0px;
+    border: 1px solid #7db141;
+    position: absolute;
+    transform: translateX(-50%);
+}
