@@ -49,7 +49,7 @@ const Navigation = (props) => {
         />
             <ul className='right-links'>
                 <NavLink to="/contact" >Contact</NavLink>
-                <NavLink to="/jspquoi" >Jspquoi</NavLink>
+                <NavLink to="/jspquoi" >Motivations</NavLink>
             </ul>
             <label className="theme-switch">
             <input className="theme-input" type="checkbox" defaultChecked={isDarkTheme} onClick={() => {
